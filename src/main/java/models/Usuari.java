@@ -47,6 +47,16 @@ public class Usuari {
         return playlists;
     }
 
+    public Playlist getPlaylist(String playListId){
+        int index=0;
+        for(int i =0; i<playlists.size();i++){
+            if(playListId.equals(playlists.get(i).getId())){
+                index=i;
+            }
+        }
+       return playlists.get(index);
+    }
+
     public void setPlaylists(ArrayList<Playlist> playlists) {
         this.playlists = playlists;
     }

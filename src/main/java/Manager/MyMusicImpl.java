@@ -44,23 +44,27 @@ public class MyMusicImpl implements MyMusic{
 
     @Override
     public List<Artista> getArtistes() {
-
-        return null;
+        return this.artistes;
     }
 
     @Override
     public void createPlaylist(String usrId, String titol, String nomArtista, String album, int duració) {
-
+        Playlist playList= new Playlist(titol,nomArtista,album,duració);
+        Usuari usr = usuaris.get(usrId);
+        usr.addPlaylist(playList);
+        usuaris.put(usrId,usr);
     }
 
     @Override
     public void setPlaylistTittle(String usrId, String playlisId, String tittle) {
-
+        Usuari usr = usuaris.get(usrId);
+        usr.addPlaylistTittle(usr.getPlaylist(playlisId),tittle);
+        usuaris.put(usrId,usr);
     }
 
     @Override
     public List<Playlist> getUserPlaylist(String usrId) {
-        return null;
+        return usuaris.get(usrId).getPlaylists();
     }
 
     @Override
