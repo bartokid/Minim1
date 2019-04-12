@@ -16,7 +16,8 @@ public class MyMusicImpl implements MyMusic{
 
     //CONSTRUCTOR
     private MyMusicImpl(){
-
+        this.usuaris= new HashMap<String,Usuari>();
+        this.artistes=new LinkedList<Artista>();
     }
     //SINGLETON
     public static MyMusicImpl getInstance() {
@@ -32,17 +33,18 @@ public class MyMusicImpl implements MyMusic{
     }
     //METODOS
     @Override
-    public void addArtista(String artistaId, String name, String surname) {
-
+    public void addArtista( String name, String surname) {
+        artistes.add(new Artista(name,surname));
     }
 
     @Override
-    public void addUser(String userId, String name, String surname) {
-
+    public void addUser( String usrId, Usuari usuari) {
+        usuaris.put(usrId,usuari);
     }
 
     @Override
     public List<Artista> getArtistes() {
+
         return null;
     }
 
@@ -63,6 +65,7 @@ public class MyMusicImpl implements MyMusic{
 
     @Override
     public void clear() {
-
+        usuaris= new HashMap<>();
+        artistes= new LinkedList<>();
     }
 }

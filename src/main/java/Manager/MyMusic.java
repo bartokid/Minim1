@@ -5,19 +5,17 @@ import models.*;
 public interface MyMusic {
     /**
      * Afegeig un artista al sistema
-     * @param artistaId
      * @param name
      * @param surname
      */
-    void addArtista(String artistaId, String name, String surname);
+    void addArtista( String name, String surname);
 
     /**
      *Afegeig un usuari al sistema
-     * @param userId
-     * @param name
-     * @param surname
+     * @param usrId
+     * @param usuari
      */
-    void addUser(String userId, String name, String surname);
+    void addUser(String usrId, Usuari usuari);
 
     /**
      * Retorna llista dels artistes del sistema
