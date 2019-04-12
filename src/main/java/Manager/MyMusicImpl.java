@@ -76,6 +76,13 @@ public class MyMusicImpl implements MyMusic{
         return usuaris.get(usrId).getPlaylists();
     }
 
+    public int sizeLlistaUsuaris(){
+        return usuaris.size();
+    }
+
+    public int sizeLlistaArtistes(){
+        return artistes.size();
+    }
     @Override
     public void clear() {
         usuaris= new HashMap<>();
